@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignIn_Activity extends AppCompatActivity {
 
-    TextView createAccount;
+    TextView createAccount, forgotPassword;
     EditText Email, Password;
     private FirebaseAuth mAuth;
     Button LogIn;
@@ -32,6 +32,11 @@ public class SignIn_Activity extends AppCompatActivity {
 
         createAccount.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), SignUp_Activity.class);
+            startActivity(intent);
+        });
+
+        forgotPassword.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
             startActivity(intent);
         });
 
@@ -88,5 +93,6 @@ public class SignIn_Activity extends AppCompatActivity {
         LogIn = findViewById(R.id.loginButton);
         Email = findViewById(R.id.SignIn_Email);
         Password = findViewById(R.id.SignIn_Password);
+        forgotPassword = findViewById(R.id.forgotPassword);
     }
 }
