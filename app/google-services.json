@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "110092393275",
+    "firebase_url": "https://knowdrowsy-default-rtdb.firebaseio.com",
+    "project_id": "knowdrowsy",
+    "storage_bucket": "knowdrowsy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110092393275:android:5a7b103bd02f216697351e",
+        "android_client_info": {
+          "package_name": "com.geekym.knowdrowsy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110092393275-s7uatfg7tjadq45qaufch4aagvt8b2jj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.geekym.knowdrowsy",
+            "certificate_hash": "b173ac0895ca8a013f2878558ea080755d04fe3a"
+          }
+        },
+        {
+          "client_id": "110092393275-66pggjmr97lhiq908q4e3r306qvght2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDzDp6_miuRWDML3rcOxCUL7HmzJt5m2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110092393275-66pggjmr97lhiq908q4e3r306qvght2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
