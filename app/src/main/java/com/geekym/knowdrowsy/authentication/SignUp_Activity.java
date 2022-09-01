@@ -4,16 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.geekym.knowdrowsy.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class SignUp_Activity extends AppCompatActivity {
 
     Button createAccount;
     TextView signIn;
+    EditText Name, Email, Password;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +41,80 @@ public class SignUp_Activity extends AppCompatActivity {
         });
 
 
+        createAccount.setOnClickListener(view -> {
+            //Get all the input from the user
+            String name = Name.getText().toString().trim();
+            String email = Email.getText().toString().trim();
+            String pass = Password.getText().toString().trim();
+
+
+            //Check if the details entered are valid or not
+            if (name.isEmpty()) {
+                Name.setError("Field can't be empty");
+                Name.requestFocus();
+                return;
+            }
+            if (email.isEmpty()) {
+                Email.setError("Field can't be empty");
+                Email.requestFocus();
+                return;
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Email.setError("Please enter a valid email address");
+                Email.requestFocus();
+                return;
+            } else if (pass.isEmpty()) {
+                Password.setError("Field can't be empty");
+                Password.requestFocus();
+                return;
+            } else if (pass.length() < 8) {
+                Password.setError("Password must be at least 8 characters");
+                Password.requestFocus();
+                return;
+            }
+
+
+            mAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(SignUp_Activity.this, task -> {
+                        if (task.isSuccessful()) {
+                            //Successfully Created a new account
+
+                            Users users = new Users(name, email); //Creating a User Object with the inputs by user
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                                    .setValue(users).addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            Toast.makeText(this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this, "Verification mail sent", Toast.LENGTH_SHORT).show(); //Send a verification link
+                                            intentNow();
+                                            assert user != null;
+                                            user.sendEmailVerification();
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        });
+
+
+    }
+
+    private void intentNow() {
+        startActivity(new Intent(getApplicationContext(), SignIn_Activity.class));
     }
 
     private void initialization() {
         createAccount = findViewById(R.id.createAccount);
         signIn = findViewById(R.id.SignIn);
+        Name = findViewById(R.id.SignUp_Name);
+        Email = findViewById(R.id.SignUp_Email);
+        Password = findViewById(R.id.SignUp_Password);
+        mAuth = FirebaseAuth.getInstance();
     }
 }

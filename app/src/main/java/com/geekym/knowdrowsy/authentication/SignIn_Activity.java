@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.geekym.knowdrowsy.R;
@@ -12,6 +13,7 @@ import com.geekym.knowdrowsy.R;
 public class SignIn_Activity extends AppCompatActivity {
 
     TextView createAccount;
+    EditText Email, Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
