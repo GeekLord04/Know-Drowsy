@@ -14,7 +14,16 @@
         android:theme="@style/Theme.KnowDrowsy"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".authentication.ForgotPassword"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.SignIn_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.SignUp_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".introduction.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +31,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
