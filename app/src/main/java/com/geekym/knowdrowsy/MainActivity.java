@@ -95,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
         currentTime = Calendar.getInstance().getTime();
         String formattedDate = DateFormat.getDateInstance().format(currentTime);
 
-        Time time = new Time();
-        time.setToNow();
-
         date_txt.setText(formattedDate);
         textClock.setFormat24Hour("hh:mm:ss a  EEE MMM d");
 
