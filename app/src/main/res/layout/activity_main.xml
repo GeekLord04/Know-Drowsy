@@ -8,8 +8,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:id="@+id/constraintLayout4"
+        android:layout_width="410dp"
+        android:layout_height="486dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +20,7 @@
         app:layout_constraintVertical_bias="0.0">
 
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -33,30 +34,37 @@
 
             <TextView
                 android:id="@+id/user_name"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="302dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/dm_sans_bold"
                 android:paddingTop="8dp"
-                android:text="Hello User"
                 android:textColor="@color/black"
-                android:textSize="27dp" />
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profile_img"
+                app:layout_constraintHorizontal_bias="0.147"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/profile_img"
-                android:layout_width="250dp"
-                android:layout_height="190dp"
-                android:layout_marginRight="20dp"
+                android:layout_width="102dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="16dp"
                 android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
-        </LinearLayout>
+                android:src="@drawable/profile_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="414dp"
+            android:layout_height="118dp"
             android:layout_marginTop="8dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,33 +72,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
-            <EditText
+            <TextView
                 android:id="@+id/date"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:fontFamily="@font/dm_sans_medium"
-                android:inputType="time"
-                android:text="Date"
-                android:textSize="19dp" />
-
-            <EditText
-                android:id="@+id/time"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:fontFamily="@font/dm_sans_medium"
                 android:inputType="date"
-                android:text="Time"
-                android:textSize="19dp" />
+                android:textColor="@color/black"
+                android:textSize="23dp" />
+
+            <TextClock
+                android:id="@+id/timeClock"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:fontFamily="@font/dm_sans_medium"
+                android:format24Hour="hh:mm:ss a  EEE MMM d"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="415dp"
             android:layout_height="200dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -100,41 +112,43 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:orientation="horizontal">
+
 
                 <TextView
                     android:id="@+id/location"
                     android:layout_width="105dp"
                     android:layout_height="31dp"
+                    android:layout_marginStart="28dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/dm_sans_medium"
                     android:gravity="center"
                     android:text="Location:"
-                    android:textSize="19dp"
                     android:textColor="@color/black"
+                    android:textSize="23dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/location_btn"
-                    app:layout_constraintHorizontal_bias="0.45"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.507" />
-
+                    app:layout_constraintVertical_bias="0.51" />
 
                 <TextView
                     android:id="@+id/location_text"
-                    android:layout_width="196dp"
-                    android:layout_height="73dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_width="249dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="60dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/dm_sans_medium"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/dm_sans_medium"
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.592" />
+                    app:layout_constraintHorizontal_bias="0.925"
+                    app:layout_constraintStart_toEndOf="@+id/location"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <Button
                     android:id="@+id/location_btn"
                     style="?android:attr/borderlessButtonStyle"
@@ -154,43 +168,48 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
                 android:orientation="horizontal">
+
+
                 <TextView
                     android:id="@+id/camera"
                     android:layout_width="105dp"
                     android:layout_height="31dp"
+                    android:layout_marginStart="28dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/dm_sans_medium"
                     android:gravity="center"
                     android:text="Camera:"
-                    android:textSize="19dp"
                     android:textColor="@color/black"
+                    android:textSize="23dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/camera_btn"
-                    app:layout_constraintHorizontal_bias="0.45"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.507" />
-
+                    app:layout_constraintVertical_bias="0.448" />
 
                 <TextView
                     android:id="@+id/camera_text"
-                    android:layout_width="196dp"
-                    android:layout_height="73dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_width="227dp"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="36dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/dm_sans_medium"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/dm_sans_medium"
+                    android:textSize="16dp"
+                    android:paddingTop="17dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/camera"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.592" />
+                    app:layout_constraintVertical_bias="0.666" />
+
                 <Button
                     android:id="@+id/camera_btn"
                     style="?android:attr/borderlessButtonStyle"
@@ -217,27 +236,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="229dp"
+        android:layout_marginBottom="52dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:text="Please swipe to start your camera and monitor yourself."
-            android:textSize="19dp"
             android:textColor="@color/black"
-            android:layout_margin="20dp"/>
+            android:textSize="19dp" />
+
         <com.ncorti.slidetoact.SlideToActView
             android:id="@+id/slider"
             android:layout_width="340dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:outer_color="#FF8039"
             app:text="Slide to start"
-            app:text_size="24dp"
-            android:layout_gravity="center"/>
+            app:text_size="24dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

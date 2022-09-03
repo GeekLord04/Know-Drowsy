@@ -67,7 +67,7 @@ public class SignIn_Activity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    assert user != null;
+//                    assert user != null;
                     if (!user.isEmailVerified()) {      //If the User's email is already verified
                         user.sendEmailVerification();
                         Toast.makeText(this, "Check your email to verify your account and Login again", Toast.LENGTH_SHORT).show();
