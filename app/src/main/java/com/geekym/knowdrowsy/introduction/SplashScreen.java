@@ -9,8 +9,6 @@ import android.os.Handler;
 import com.geekym.knowdrowsy.MainActivity;
 import com.geekym.knowdrowsy.R;
 import com.geekym.knowdrowsy.authentication.SignIn_Activity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SplashScreen extends AppCompatActivity {
 
