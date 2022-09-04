@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -36,26 +37,29 @@
                 android:id="@+id/user_name"
                 android:layout_width="302dp"
                 android:layout_height="80dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/dm_sans_bold"
                 android:paddingTop="8dp"
+                android:paddingLeft="8dp"
+                android:text="Loading..."
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/profile_img"
+                app:layout_constraintEnd_toStartOf="@+id/profile_logout"
                 app:layout_constraintHorizontal_bias="0.147"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/profile_img"
-                android:layout_width="102dp"
-                android:layout_height="64dp"
-                android:layout_marginEnd="16dp"
+            <ImageButton
+                android:id="@+id/profile_logout"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+
+                android:layout_marginEnd="30dp"
                 android:layout_weight="1"
-                android:src="@drawable/profile_icon"
+                android:background="@drawable/logout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -77,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
+                android:paddingLeft="8dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
@@ -93,6 +98,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
+                android:paddingLeft="8dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:fontFamily="@font/dm_sans_medium"
@@ -122,6 +128,7 @@
                     android:layout_height="31dp"
                     android:layout_marginStart="28dp"
                     android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:fontFamily="@font/dm_sans_medium"
                     android:gravity="center"
                     android:text="Location:"
@@ -190,7 +197,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.448" />
+                    app:layout_constraintVertical_bias="0.51" />
 
                 <TextView
                     android:id="@+id/camera_text"
@@ -250,6 +257,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:paddingLeft="8dp"
             android:text="Please swipe to start your camera and monitor yourself."
             android:textColor="@color/black"
             android:textSize="19dp" />

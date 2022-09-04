@@ -3,13 +3,16 @@ package com.geekym.knowdrowsy;
 import static androidx.constraintlayout.motion.widget.Debug.getLocation;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -19,9 +22,12 @@ import android.text.Html;
 import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.geekym.knowdrowsy.authentication.SignIn_Activity;
 import com.geekym.knowdrowsy.authentication.Users;
 import com.geekym.knowdrowsy.helpers.MLVideoHelperActivity;
 import com.geekym.knowdrowsy.helpers.object.DriverDrowsinessDetectionActivity;
@@ -39,6 +45,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.auth.User;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.ncorti.slidetoact.SlideToActView;
 
 import java.io.IOException;
@@ -57,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private TextClock textClock;
     FusedLocationProviderClient fusedLocationProviderClient;
     SlideToActView slider;
+    ImageButton logout;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -104,6 +112,40 @@ public class MainActivity extends AppCompatActivity {
             LocationGet();
 
         }
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);  //Creates a Pop-up Dialog
+                alertDialogBuilder.setTitle("Confirm Logout?");
+                alertDialogBuilder.setIcon(R.drawable.app_img);
+                alertDialogBuilder.setMessage("Do you really want to Logout?");
+                alertDialogBuilder.setCancelable(false);
+                alertDialogBuilder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(MainActivity.this, SignIn_Activity.class);
+                        startActivity(intent);
+                        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("remember","false");
+                        editor.apply();
+                        finish();
+                    }
+                });
+
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Exit cancelled", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                AlertDialog alertDialog=alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
 
 
         //Granting Location Permission
@@ -193,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
         slider = findViewById(R.id.slider);
+        logout = findViewById(R.id.profile_logout);
 
     }
 }

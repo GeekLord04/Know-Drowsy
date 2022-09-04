@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".authentication.SignUp_Activity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
+        android:layout_height="match_parent"
+        >
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+            android:layout_margin="14dp"
+            >
+            <ImageView
+                android:id="@+id/loginIllustration"
+                android:layout_width="match_parent"
+                android:layout_height="231dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="80dp"
+                app:srcCompat="@drawable/signup_illustration" />
             <TextView
                 android:id="@+id/signUpHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/dm_sans_bold"
                 android:text="Sign Up"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:textSize="35sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.105"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                />
 
             <TextView
                 android:id="@+id/signUph2"
@@ -48,36 +46,21 @@
                 android:text="Create an account"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/signUpHeader"
-                app:layout_constraintTop_toBottomOf="@+id/signUpHeader" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="end"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
+                 />
             <EditText
                 android:id="@+id/SignUp_Name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/textbox"
                 android:ems="10"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/dm_sans"
                 android:hint="Name"
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                />
 
             <EditText
                 android:id="@+id/SignUp_Email"
@@ -92,10 +75,7 @@
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="@+id/SignUp_Name"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/SignUp_Name"
-                app:layout_constraintTop_toBottomOf="@+id/SignUp_Name" />
+                 />
 
             <EditText
                 android:id="@+id/SignUp_Password"
@@ -110,35 +90,26 @@
                 android:paddingStart="20dp"
                 android:textColor="@color/black"
                 android:textColorHint="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="@+id/SignUp_Email"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/SignUp_Email"
-                app:layout_constraintTop_toBottomOf="@+id/SignUp_Email" />
+                />
 
             <Button
                 android:id="@+id/createAccount"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/primary_button"
                 android:text="Create account"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SignUp_Password" />
-
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/createAccount"
-                app:layout_constraintStart_toStartOf="@+id/createAccount"
-                app:layout_constraintTop_toBottomOf="@+id/createAccount"
-                app:layout_constraintVertical_bias="0.529">
+               >
 
                 <TextView
                     android:id="@+id/sign_in_suggestion"
@@ -164,20 +135,14 @@
                     tools:layout_editor_absoluteY="676dp" />
             </LinearLayout>
 
+
+
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="205dp"
-        android:layout_height="242dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/signup_illustration" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
