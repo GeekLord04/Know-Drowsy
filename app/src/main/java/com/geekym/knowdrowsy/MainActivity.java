@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.TextView;
 
+import com.geekym.knowdrowsy.authentication.SignIn_Activity;
 import com.geekym.knowdrowsy.authentication.Users;
 import com.geekym.knowdrowsy.helpers.MLVideoHelperActivity;
 import com.geekym.knowdrowsy.helpers.object.DriverDrowsinessDetectionActivity;
@@ -39,6 +40,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.auth.User;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.ncorti.slidetoact.SlideToActView;
 
 import java.io.IOException;
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private TextClock textClock;
     FusedLocationProviderClient fusedLocationProviderClient;
     SlideToActView slider;
+    CircularImageView profile;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -104,6 +107,14 @@ public class MainActivity extends AppCompatActivity {
             LocationGet();
 
         }
+
+        profile.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, SignIn_Activity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        });
 
 
         //Granting Location Permission
@@ -193,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
         slider = findViewById(R.id.slider);
+        profile = findViewById(R.id.profile_img);
 
     }
 }

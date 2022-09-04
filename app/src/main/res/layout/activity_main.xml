@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -41,6 +42,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/dm_sans_bold"
                 android:paddingTop="8dp"
+                android:text="Loading..."
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
