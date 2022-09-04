@@ -3,16 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/drawable/forgotpassword_illustration.xml" value="0.1665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/drawable/permission_button.xml" value="0.1665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/drawable/primary_button.xml" value="0.1665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/drawable/signin_illustration.xml" value="0.1665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/drawable/textbox.xml" value="0.1665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/KnowDrowsy/app/src/main/res/layout/activity_video_helper.xml" value="0.25416666666666665" />
+        <entry key="..\:/Know-Drowsy/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Know-Drowsy/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Know-Drowsy/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
+        <entry key="..\:/Know-Drowsy/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Know-Drowsy/app/src/main/res/layout/activity_video_helper.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/drawable/primary_button.xml" value="0.2105" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/drawable/textbox.xml" value="0.154" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/layout/activity_forgot_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/layout/activity_sign_in.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/binay/AndroidStudioProjects/Know-Drowsy/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
