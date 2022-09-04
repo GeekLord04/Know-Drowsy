@@ -2,9 +2,13 @@ package com.geekym.knowdrowsy.authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,14 +25,44 @@ public class SignIn_Activity extends AppCompatActivity {
     TextView createAccount, forgotPassword;
     EditText Email, Password;
     private FirebaseAuth mAuth;
+    boolean passwordVisible;
     Button LogIn;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
         initialization();
+
+        // Hide & Show Password
+        Password.setOnTouchListener((v, event) -> {
+            final int Right = 2;
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= Password.getRight() - Password.getCompoundDrawables()[Right].getBounds().width()) {
+                    int selection = Password.getSelectionEnd();
+                    //Handles Multiple option popups
+                    if (passwordVisible) {
+                        //set drawable image here
+                        Password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility_off, 0);
+                        //for hide password
+                        Password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        passwordVisible = false;
+                    } else {
+                        //set drawable image here
+                        Password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility, 0);
+                        //for show password
+                        Password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        passwordVisible = true;
+                    }
+                    Password.setLongClickable(false); //Handles Multiple option popups
+                    Password.setSelection(selection);
+                    return true;
+                }
+            }
+            return false;
+        });
 
         createAccount.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), SignUp_Activity.class);
