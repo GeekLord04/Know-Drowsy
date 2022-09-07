@@ -1,8 +1,15 @@
 package com.geekym.knowdrowsy.helpers.vision;
 
+import android.content.Context;
+import android.media.MediaPlayer;
+
+
+import com.geekym.knowdrowsy.R;
+
 import com.google.mlkit.vision.face.Face;
 
 import java.util.ArrayDeque;
+
 
 public class FaceDrowsiness {
     private static final float DROWSINESS_THRESHOLD = 0.9f;
@@ -10,9 +17,15 @@ public class FaceDrowsiness {
 
     public long lastCheckedAt;
     private final ArrayDeque<Boolean> history = new ArrayDeque<>();
+    private Context context;
+
+    public FaceDrowsiness(Context context) {
+        this.context = context;
+    }
 
     public boolean isDrowsy(Face face) {
         boolean isDrowsy = true;
+        MediaPlayer media = MediaPlayer.create(context,R.raw.siren);
         lastCheckedAt = System.currentTimeMillis();
         if (face.getLeftEyeOpenProbability() == null
             || face.getRightEyeOpenProbability() == null) {
@@ -34,6 +47,7 @@ public class FaceDrowsiness {
         } else {
             return false;
         }
+        if (isDrowsy) media.start();
         return isDrowsy;
     }
 }

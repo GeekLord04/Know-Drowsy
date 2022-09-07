@@ -7,23 +7,26 @@
     android:background="@color/white"
     tools:context=".introduction.SplashScreen">
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="245dp"
-        android:layout_height="224dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="268dp"
+        android:layout_height="236dp"
+        android:layout_marginTop="184dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/app_img" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/dm_sans_bold"
-        android:text="KnowDrowsy"
-        android:textSize="30dp"
+        android:layout_width="284dp"
+        android:layout_height="89dp"
+        android:text="Know Drowsy"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:fontFamily="@font/dm_sans_medium"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"

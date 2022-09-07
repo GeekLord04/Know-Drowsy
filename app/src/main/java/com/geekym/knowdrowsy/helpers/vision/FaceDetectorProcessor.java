@@ -40,11 +40,13 @@ public class FaceDetectorProcessor extends VisionProcessorBase<List<Face>> {
   private static final String TAG = "FaceDetectorProcessor";
 
   private final FaceDetector detector;
+  private final Context context;
 
   private final HashMap<Integer, FaceDrowsiness> drowsinessHashMap = new HashMap<>();
 
   public FaceDetectorProcessor(Context context) {
     super(context);
+    this.context = context;
     FaceDetectorOptions faceDetectorOptions = new FaceDetectorOptions.Builder()
           .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
           .setLandmarkMode(FaceDetectorOptions.LANDMARK_MODE_ALL)
@@ -71,7 +73,7 @@ public class FaceDetectorProcessor extends VisionProcessorBase<List<Face>> {
     for (Face face : faces) {
       FaceDrowsiness faceDrowsiness = drowsinessHashMap.get(face.getTrackingId());
       if (faceDrowsiness == null) {
-        faceDrowsiness = new FaceDrowsiness();
+        faceDrowsiness = new FaceDrowsiness(context);
         drowsinessHashMap.put(face.getTrackingId(), faceDrowsiness);
       }
       boolean isDrowsy = faceDrowsiness.isDrowsy(face);
