@@ -28,4 +28,18 @@
         app:layout_constraintStart_toStartOf="@+id/camera_source_preview"
         app:layout_constraintTop_toTopOf="@+id/camera_source_preview" />
 
+    <Button
+        android:id="@+id/end"
+        android:layout_width="111dp"
+        android:layout_height="62dp"
+        android:background="@drawable/circular_btn"
+        android:text="END"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/camera_source_preview"
+        app:layout_constraintStart_toStartOf="@+id/camera_source_preview"
+        app:layout_constraintTop_toBottomOf="@+id/camera_source_preview"
+        app:layout_constraintVertical_bias="0.67" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

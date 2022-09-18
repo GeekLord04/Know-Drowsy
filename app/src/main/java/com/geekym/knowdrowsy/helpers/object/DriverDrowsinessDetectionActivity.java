@@ -7,7 +7,6 @@ import androidx.annotation.RequiresApi;
 
 import com.geekym.knowdrowsy.helpers.MLVideoHelperActivity;
 import com.geekym.knowdrowsy.helpers.vision.FaceDetectorProcessor;
-import com.geekym.knowdrowsy.MainActivity;
 
 public class DriverDrowsinessDetectionActivity extends MLVideoHelperActivity {
 

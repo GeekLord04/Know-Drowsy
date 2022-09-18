@@ -1,16 +1,20 @@
 package com.geekym.knowdrowsy.helpers;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.geekym.knowdrowsy.MainActivity;
 import com.geekym.knowdrowsy.R;
 import com.geekym.knowdrowsy.helpers.vision.CameraSource;
 import com.geekym.knowdrowsy.helpers.vision.CameraSourcePreview;
@@ -25,6 +29,7 @@ public abstract class MLVideoHelperActivity extends AppCompatActivity {
     private CameraSourcePreview preview;
     private GraphicOverlay graphicOverlay;
     protected CameraSource cameraSource;
+    Button end_btn;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -32,6 +37,7 @@ public abstract class MLVideoHelperActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_helper);
 
+        end_btn = findViewById(R.id.end);
         preview = findViewById(R.id.camera_source_preview);
         graphicOverlay = findViewById(R.id.graphic_overlay);
 
@@ -41,6 +47,14 @@ public abstract class MLVideoHelperActivity extends AppCompatActivity {
             initSource();
             startCameraSource();
         }
+
+        end_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finishAffinity();
+            }
+        });
     }
 
     @Override
