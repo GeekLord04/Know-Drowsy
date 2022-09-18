@@ -30,3 +30,4 @@ driver has fully lost attentiveness.
 |---|---|---|
 | ![KD_Mockup](https://user-images.githubusercontent.com/84928799/190928586-036599c8-5a61-4c8d-8afc-c4451451c03d.png) | ![mockup_homescreen](https://user-images.githubusercontent.com/84928799/190928293-edf320bb-54b3-4529-9456-d5d400c3eeb6.png) | ![mockup_false](https://user-images.githubusercontent.com/84928799/190928289-bd91427a-3f10-40c6-9eb3-470a68e4ad84.png)
 
+https://user-images.githubusercontent.com/84928799/190928702-979fbdf8-754a-492f-a1f4-bd6414335bc3.mp4
