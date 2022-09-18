@@ -33,6 +33,7 @@ driver has fully lost attentiveness.
 
   
 
-![KD_Video](https://user-images.githubusercontent.com/84928799/190928733-e84e8a7a-3f09-4233-9894-d7284ec3deab.mp4)
+https://user-images.githubusercontent.com/84928799/190928976-ee0d865a-30c8-4248-b4e0-fd7a23879a97.mp4
+
 
 
