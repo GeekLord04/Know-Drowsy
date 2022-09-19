@@ -32,7 +32,7 @@ driver has fully lost attentiveness.
 
 
 ## 🔗 Links
-[[Demo Video Link]](https://youtube.com/shorts/cSb5cmVZKLk?feature=share) <br>
-[[ML Kit Vision Quickstart Sample App]](https://github.com/googlesamples/mlkit/tree/master/android/vision-quickstart)
+[Demo Video Link](https://youtube.com/shorts/cSb5cmVZKLk?feature=share) <br>
+[ML Kit Vision Quickstart Sample App](https://github.com/googlesamples/mlkit/tree/master/android/vision-quickstart)
 
 
