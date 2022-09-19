@@ -30,10 +30,6 @@ driver has fully lost attentiveness.
 |---|---|---|
 | ![KD_Mockup](https://user-images.githubusercontent.com/84928799/190928586-036599c8-5a61-4c8d-8afc-c4451451c03d.png) | ![mockup_homescreen](https://user-images.githubusercontent.com/84928799/190928293-edf320bb-54b3-4529-9456-d5d400c3eeb6.png) | ![mockup_false](https://user-images.githubusercontent.com/84928799/190928289-bd91427a-3f10-40c6-9eb3-470a68e4ad84.png)
 
-
-  
-
-https://user-images.githubusercontent.com/84928799/190928976-ee0d865a-30c8-4248-b4e0-fd7a23879a97.mp4
-
-
-
+## 🔗 Links
+[![Video](Video Demo of the App)](https://youtube.com/shorts/cSb5cmVZKLk?feature=share)
+[![MlVision](ML Kit Vision Quickstart Sample App)](https://github.com/googlesamples/mlkit/tree/master/android/vision-quickstart)
